@@ -15,6 +15,5 @@ class nfs::selinux::gentoo {
     }
     selinux::loadmodule {"rpc": require => Package[selinux-nfs] }
     selinux::loadmodule {"portmap": require => Package[selinux-portmap] }
-    selinux::module {"nfs":}
 }
 
