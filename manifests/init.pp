@@ -14,6 +14,9 @@ class nfs {
         centos: { include nfs::centos }
         default: { include nfs::base }
     }
+    case $selinux {
+        include nfs::selinux
+    }
 }
 
 class nfs::base {
