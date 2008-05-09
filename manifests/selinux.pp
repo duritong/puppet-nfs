@@ -8,11 +8,13 @@ class nfs::selinux {
 }
 
 class nfs::selinux::gentoo {
-    package{'selinux-nfs':
+    package{['selinux-nfs', 'selinux-portmap']:
         ensure => present,
         category => 'sec-policy',
         require => Package[nfs-utils],
     }
     selinux::loadmodule {"rpc": require => Package[selinux-nfs] }
+    selinux::loadmodule {"portmap": require => Package[selinux-portmap] }
+    selinux::module {"nfs":}
 }
 
