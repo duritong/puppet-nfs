@@ -21,7 +21,7 @@ class nfs::centos inherits nfs::base {
       }
       Service['portmap'] {
         name => 'rpcbind',
-        require +> Package['rpcbind'],
+        require => Package['rpcbind'],
       }
     }
   }
