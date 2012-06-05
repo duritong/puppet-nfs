@@ -17,8 +17,8 @@
 #
 
 class nfs {
-    case $operatingsystem {
-        centos: { include nfs::centos }
-        default: { include nfs::base }
-    }
+  case $::operatingsystem {
+    centos: { include nfs::centos }
+    default: { include nfs::base }
+  }
 }

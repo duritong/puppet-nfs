@@ -13,7 +13,7 @@ class nfs::centos inherits nfs::base {
       enable => false,
       require => Package[nfs-utils] ;
   }
-  case $lsbmajdistrelease {
+  case $::lsbmajdistrelease {
     '6' : {
       package {
         'rpcbind' :
